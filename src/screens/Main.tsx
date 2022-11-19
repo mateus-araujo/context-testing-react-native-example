@@ -25,7 +25,7 @@ export default () => {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="position">
-      <Text style={styles.headerText}>Welcome, {name || "No Name"}!</Text>
+      <Text style={styles.headerText}>Welcome, {newName || name || "No Name"}!</Text>
 
       <Input
         label="Name"
