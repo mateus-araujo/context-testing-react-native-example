@@ -20,3 +20,13 @@ it("changes the text on submit", () => {
   fireEvent.press(screen.getByText("Change"));
   screen.getByText("Welcome, asdf!");
 });
+
+it("calls save on button press", () => {
+  const saveName = jest.fn();
+  const screen = render(<Main saveName={saveName} />);
+
+  fireEvent.changeText(screen.getByPlaceholderText("Example"), "asdf");
+  fireEvent.press(screen.getByText("Change"));
+
+  expect(saveName).toBeCalledWith("asdf");
+});

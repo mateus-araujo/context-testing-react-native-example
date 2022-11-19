@@ -1,6 +1,9 @@
 import React from "react";
 
-const NameContext = React.createContext({});
+const NameContext = React.createContext({
+  name: null,
+  saveName: (name: string) => {},
+});
 
 export const useName = () => React.useContext(NameContext);
 
